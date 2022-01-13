@@ -40,6 +40,12 @@ namespace SISCOSMAC.Web.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             LoginViewModel lvm = new LoginViewModel(UnitOfWork, mapper);
 
+            //ejemplo de campo vacio
+            //if(!string.IsNullOrEmpty(model.UsuarioLogin))
+            //    model.UsuarioLogin = model.UsuarioLogin.ToUpper();
+            //else
+            //    ModelState.AddModelError(string.Empty, "el usuario no tiene que estar vacio");
+
             model.UsuarioLogin = model.UsuarioLogin.ToUpper();
             bool usuarioExiste = await lvm.ValidarUsuario(model.UsuarioLogin, model.Password);
 

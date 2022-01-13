@@ -8,3 +8,12 @@
     justify-content: center;
     margin: auto;
 }
+.textoR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.textoNav {
+    font-family: 'Roboto', sans-serif;
+}

@@ -68,6 +68,8 @@ namespace SISCOSMAC.Web.Controllers
                         us.APaterno = us.APaterno.ToUpper();
                         us.AMaterno = us.AMaterno.ToUpper();
                         us.Rol = us.Rol.ToUpper();
+                        us.UsuarioLogin = us.UsuarioLogin.ToUpper();
+
 
                         us.PasswordSal = Hash.GenerarSal();
                         us.PasswordHash = Hash.HashPasswordConSal(Encoding.ASCII.GetBytes(usuarioViewModel.PasswordClara), us.PasswordSal);
@@ -129,6 +131,7 @@ namespace SISCOSMAC.Web.Controllers
                     usuario.APaterno = usuario.APaterno.ToUpper();
                     usuario.AMaterno = usuario.AMaterno.ToUpper();
                     usuario.Rol = usuario.Rol.ToUpper();
+                    usuario.UsuarioLogin = usuario.UsuarioLogin.ToUpper();
 
                     await unitofwork.UsuarioRepository.ActualizarAsin(usuario, id);
                     await unitofwork.SaveAsync();

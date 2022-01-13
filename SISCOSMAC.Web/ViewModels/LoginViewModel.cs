@@ -28,11 +28,11 @@ namespace SISCOSMAC.Web.ViewModels
             mapper = _mapper;
         }
 
-        [Required(ErrorMessage = "*")]
+        [Required(ErrorMessage = "Se Requiere Usuario")]
         [Display(Name = "Usuario")]
         public string UsuarioLogin { get; set; }
 
-        [Required(ErrorMessage = "* Campos Requeridos")]
+        [Required(ErrorMessage = "Se Requiere Contraseña")]
         [DataType(DataType.Password)]
         [Display(Name = "Contraseña")]
         public string Password { get; set; }
