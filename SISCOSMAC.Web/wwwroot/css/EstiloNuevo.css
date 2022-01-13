@@ -1,0 +1,10 @@
+﻿.loginA{
+    margin:auto;
+}
+
+.BotonC {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}

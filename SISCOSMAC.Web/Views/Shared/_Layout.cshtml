@@ -14,6 +14,7 @@
     <link href="~/css/slick-theme.css" rel="stylesheet" />
     <link href="~/css/slick.css" rel="stylesheet" />
     <link href="~/css/styles.css" rel="stylesheet" />
+    <link href="~/css/EstiloNuevo.css" rel="stylesheet" />
 
      <!--CDNS CSS-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
@@ -58,13 +59,13 @@
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Brand -->
-        <!-- Links -->
+        
+        
         <partial name="_Acceso"/>
 
-        <div class="collapse navbar-collapse" id="navbarsExample03">
-            <ul class="navbar-nav mr-auto">
-                @*<li class="nav-item">
+        @*<div class="collapse navbar-collapse" id="navbarsExample03">*@
+            @*<ul class="navbar-nav mr-auto">
+                <li class="nav-item">
                     <a class="nav-link" asp-action="Index" asp-controller="Home" style="color:#ffffff"><i class="fas fa-home"></i></a>
                 </li>               
                 
@@ -82,11 +83,11 @@
                     <a class="nav-link " id="navbardrop"  asp-action="Index" asp-controller="SolicitudMantenimiento"  style="color:#ffffff">
                         <strong>Solicitud de Mantenimiento</strong>
                     </a>                    
-                </li>*@
-            </ul>
+                </li>
+            </ul>*@
 
 
-            @if (User.Identity.IsAuthenticated)
+            @*@if (User.Identity.IsAuthenticated)
             {
                 <form asp-area="" asp-controller="Acceso" asp-action="Logout" method="post" id="logoutForm">
                     <ul class="navbar-nav ml-auto">
@@ -172,11 +173,11 @@
                     <li><a asp-area="" asp-controller="Acceso" asp-action="Login" class="nav-link" style="color:#ffffff"><i class="fas fa-sign-in-alt"></i><strong> Iniciar sesión</strong></a></li>
                 </ul>
             }
-        </div>
+        </div>*@
     </nav>
 
 
-    <div class="container body-content mt-2">
+   @* <div class="container body-content mt-2">
         @if (User.Identity.IsAuthenticated)
         {
             if (User.IsInRole("Administrador"))
@@ -185,7 +186,9 @@
                 <br /><br />
             }
         }
-    </div>
+    </div>*@
+
+
     <div class="container body-content" style="padding-top: 30px">
         @RenderBody()
     </div>
