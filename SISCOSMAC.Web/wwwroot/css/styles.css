@@ -1,0 +1,47 @@
+.slider_inferior > .slick-prev:before {
+  background: url('../../assets/img/izquierda_gris.png');
+  background-size: contain;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slider_inferior > .slick-next:before {
+  background: url('../../assets/img/derecha_gris.png');
+  background-size: contain;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ancho_img_entrada {
+  width: 100%;
+}
+
+.contenedor_slider {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width:992px) {
+  .contenedor_slider {
+    max-width: 960px;
+  }
+}
+
+@media (min-width:1200px) {
+  .contenedor_slider {
+    max-width: 1350px;
+  }
+}
+
+.slider_inferior {
+  width: 100%;
+  height: auto;
+}
+
+slide-img {
+  width: 300px;
+}
+

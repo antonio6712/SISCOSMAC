@@ -1,0 +1,55 @@
+﻿@model SISCOSMAC.Web.ViewModels.DepartamentoViewModel;
+@{
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<br />
+<h3 class="textñ-center">Editar departamento</h3>
+
+<form method="post" ast-action="Editar">
+    <div class="row px-2 mx-2 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="DepartamentoId" />
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="NombreDepto"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="NombreDepto" class="form-control" />
+                    <span asp-validation-for="NombreDepto" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="OrdenTrabajo"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="OrdenTrabajo" class="form-control" />
+                    <span asp-validation-for="OrdenTrabajo" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group ">
+                <div class="col-8 offset-4">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.DepartamentoId ">Actualizar</button>                                
+                            </div>
+                            <div class="col">
+                                <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

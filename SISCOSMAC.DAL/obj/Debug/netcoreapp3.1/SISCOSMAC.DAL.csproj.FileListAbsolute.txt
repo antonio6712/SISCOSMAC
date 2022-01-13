@@ -1,0 +1,26 @@
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.deps.json
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.runtimeconfig.json
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.runtimeconfig.dev.json
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.dll
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.pdb
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.csproj.AssemblyReference.cache
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.AssemblyInfoInputs.cache
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.AssemblyInfo.cs
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.csproj.CoreCompileInputs.cache
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.dll
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.pdb
+C:\Users\antonio\Documents\Visual Studio 2019\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.genruntimeconfig.cache
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.deps.json
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.runtimeconfig.json
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.runtimeconfig.dev.json
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.dll
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\bin\Debug\netcoreapp3.1\SISCOSMAC.DAL.pdb
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.csproj.AssemblyReference.cache
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.AssemblyInfoInputs.cache
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.AssemblyInfo.cs
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.csproj.CoreCompileInputs.cache
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.dll
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.pdb
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.DAL\obj\Debug\netcoreapp3.1\SISCOSMAC.DAL.genruntimeconfig.cache

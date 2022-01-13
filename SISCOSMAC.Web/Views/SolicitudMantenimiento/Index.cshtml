@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text text-black-50 text-center">Registro de Solicitudes de Mantenimiento</h1>
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="font-weight-bold">Lista de Solicitudes</h2>
+            
+        </div>
+        <div class="col-6 text-right">
+            <a asp-action="Crear" asp-controller="SolicitudMantenimiento" class="btn btn-primary" ><i class="fas fa-plus "> Crear Nueva Solicitud</i></a>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <table id="tblSolicitudes" class="table table-striped table-bordered" style="width:100%;">
+        <thead>
+            <tr>
+                
+                <th>Folio</th>               
+                <th>Departamento Solicitante</th>                
+                <th>Fecha de Elaboracion</th>                
+                <th>  </th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts{ 
+    <script src="~/js/SolicitudMantenimiento.js"></script>
+}
+

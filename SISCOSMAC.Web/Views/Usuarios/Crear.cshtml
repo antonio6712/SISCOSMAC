@@ -1,0 +1,115 @@
+﻿@model SISCOSMAC.Web.ViewModels.UsuarioViewModel;
+
+<head>
+
+    <script type="text/javascript">
+        function validateDropdown() {
+            var selectedval = $('#DepartamentoId').find(":selected").text();
+            if (selectedval == "") {
+                $('#errorMgspan').text("* Campos requeridos");
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<h3 class="text-center">Crear un Nuevo Usuario</h3>
+
+<form method="post" ast-action="Crear">
+    <div class="row px-2 mx-2 border border-dark">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Nombre"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="APaterno"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="APaterno" class="form-control" />
+                    <span asp-validation-for="APaterno" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="AMaterno"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="AMaterno" class="form-control" />
+                    <span asp-validation-for="AMaterno" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="UsuarioLogin"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="UsuarioLogin" class="form-control" />
+                    <span asp-validation-for="UsuarioLogin" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="PasswordClara"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="PasswordClara" class="form-control" />
+                    <span asp-validation-for="PasswordClara" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Rol"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Rol" class="form-control" />
+                    <span asp-validation-for="Rol" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="DepartamentoId"></label>
+                </div>
+                <div class="col-8">
+                    <select asp-for="DepartamentoId" class="form-control" asp-items="ViewBag.DepartamentoId">
+                        <option selected value="">Selecciona un departamento</option>
+                    </select>
+                    <span id="errorMgspan" asp-validation-for="DepartamentoId" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <br />
+
+            <div class="form-group ">
+                <div class="col-8 offset-4">
+                    @*<partial name="_VistaCrearVolver" />*@
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Crear</button>
+                            &nbsp;
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

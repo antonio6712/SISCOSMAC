@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Departamento de Gestión Tecnológica y Vinculación</title>
+    <link href="~/css/estilo-compresion.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/22b58b27af.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../wwwroot/css/site.css" />
+    <link href="~/css/Customized.css" rel="stylesheet" />
+    <link href="~/css/fontawesome-all.css" rel="stylesheet" />
+    <link href="~/css/slick-theme.css" rel="stylesheet" />
+    <link href="~/css/slick.css" rel="stylesheet" />
+    <link href="~/css/styles.css" rel="stylesheet" />
+
+     <!--CDNS CSS-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+
+
+</head>
+<body style=" padding-top:0px;
+   margin-top: 0px;">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js"></script>
+
+    @RenderSection("Scripts", required: false)
+    <nav class="navbar navbar-light navbar-expand sticky-top" id="barraGobmx">
+        <div class="container-fluid">
+            <a class="navbar-brand" target="_blank" href="https://www.gob.mx/" style="width: 20%;"><img class="img-fluid" src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Página de inicio, Gobierno de México" style="margin-left: 20px;" width="100px" title="El portal único del gobierno"></a>
+            <div class="text-nowrap d-lg-flex justify-content-lg-end barraGobmx-enlaces" style="width: 80%;">
+                <a href="https://www.gob.mx/gobierno" target="_blank" style="color: #ffffff;" title="Gobierno">Gobierno</a><a href="https://www.participa.gob.mx/" target="_blank" style="color: rgb(255,255,255);" title="Participación Ciudadana">Participa</a>
+                <a href="https://datos.gob.mx/" target="_blank" style="color: rgb(255,255,255);" title="Datos Abiertos">Datos</a><a href="https://www.gob.mx/busqueda" target="_blank" style="color: rgb(255,255,255);" title="Buscar"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-7 text-left">
+                    <a href="https://www.gob.mx/" target="_blank"><img src="~/images/logo-gob.png" width="31%"></a><a href="https://www.gob.mx/sep" target="_blank"><img src="~/images/logo-educacion.png" width="31%"></a><a href="/"><img src="~/images/logo-tecnm_M.png" width="25%"></a>
+                    <a href="/"><img src="~/images/logo-ita.png" width="12%"></a>
+                </div>
+                <div class="col-sm-12 col-md-5 text-right align-self-center">
+                    <a href="https://login.microsoftonline.com/?whr=tecnm.mx" target="_blank"><img src="~/images/icono-correo.png" width="9%" style="margin-right: 2px;"></a><a href="https://acapulco.tecnm.mx/wp-content/uploads/index/calendario_academico_2020.jpg" target="_blank"><img src="~/images/icono-calendario.png" width="9%" style="margin-right: 2px;"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-azul-navbar sticky-top " style="background-color:#1b396a;">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Brand -->
+        <!-- Links -->
+        <partial name="_Acceso"/>
+
+        <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav mr-auto">
+                @*<li class="nav-item">
+                    <a class="nav-link" asp-action="Index" asp-controller="Home" style="color:#ffffff"><i class="fas fa-home"></i></a>
+                </li>               
+                
+                <li class="nav-item ">
+                    <a class="nav-link " id="navbardrop"  asp-action="Index" asp-controller="Departamentos"  style="color:#ffffff">
+                        <strong>Departamentos</strong>
+                    </a>                    
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " id="navbardrop"  asp-action="Index" asp-controller="Usuarios"  style="color:#ffffff">
+                        <strong>Usuarios</strong>
+                    </a>                    
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " id="navbardrop"  asp-action="Index" asp-controller="SolicitudMantenimiento"  style="color:#ffffff">
+                        <strong>Solicitud de Mantenimiento</strong>
+                    </a>                    
+                </li>*@
+            </ul>
+
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form asp-area="" asp-controller="Acceso" asp-action="Logout" method="post" id="logoutForm">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown mr-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color:#ffffff">
+                                <strong>Bienvenido @User.Identity.Name</strong>
+                            </a>
+                            <div class="dropdown-menu">
+                                @if (User.IsInRole("Administrador"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="ListaUsuarios" asp-controller="Administracion">Usuarios</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Periodos">Periodos</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Conferencias">Conferencias</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="ServicioSocial">Servicio Social</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Residencias">Residencias profesionales</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Estancias">Estancias profesionales</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Ingles">Inglés</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Visitas">Visitas a empresas</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="ListaDatosEscuela" asp-controller="Administracion">Datos de la escuela</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                                @if (User.IsInRole("ServicioSocial"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="ServicioSocial">Servicio Social</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                                @if (User.IsInRole("Ingles"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Ingles">Inglés</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                                @if (User.IsInRole("ResidenciasProfesionales"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Residencias">Residencias profesionales</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Estancias">Estancias profesionales</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                                @if (User.IsInRole("Visitas"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Visitas">Visitas a empresas</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                                @if (User.IsInRole("Conferencias"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Conferencias">Conferencias</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                                @if (User.IsInRole("Alumno"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Alumnos"> Menú de alumno</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                                @if (User.IsInRole("Jefatura"))
+                                {
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Jefaturas"> Menú de jefes de áreas académicas</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Cerrar Sesión</a>
+                                }
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            }
+            else
+            {
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a asp-area="" asp-controller="Acceso" asp-action="Login" class="nav-link" style="color:#ffffff"><i class="fas fa-sign-in-alt"></i><strong> Iniciar sesión</strong></a></li>
+                </ul>
+            }
+        </div>
+    </nav>
+
+
+    <div class="container body-content mt-2">
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Administrador"))
+            {
+                <a asp-action="Index" asp-controller="Administracion" class="btn btn-primary float-right"><i class="fas fa-user-circle"></i> Menú de administrador</a>
+                <br /><br />
+            }
+        }
+    </div>
+    <div class="container body-content" style="padding-top: 30px">
+        @RenderBody()
+    </div>
+    <div style="background-color: #1b396a;color: rgb(255,255,255);margin-top: 2%;padding-top: 5%;padding-bottom: 5%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5 style="margin-bottom: 10px;">Dirección</h5>
+                    <p class="text-left" style="font-size: 15px;margin-bottom: 30px;">Avd. Instituto Tecnológico s/n Crucero del Cayaco C.P. 39905</p>
+                    <h5 style="margin-bottom: 10px;">Contacto</h5>
+                    <p class="text-left" style="font-size: 15px;">Email:<br>vin_acapulco@tecnm.mx dir_acapulco@tecnm.mx<br>Conmutador: 744 44290 10 al 19</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="margin-bottom: 10px;">Enlaces</h5>
+                    <a href="#">
+                        <p style="font-size: 15px;color: rgb(255,255,255);margin-bottom: 2px;">Portal de Obligaciones de Transparencia<br></p>
+                    </a>
+                    <a href="http://inicio.ifai.org.mx/SitePages/ifai.aspx" target="_blank">
+                        <p style="margin-bottom: 2px;font-size: 15px;color: rgb(255,255,255);">INAI<br></p>
+                    </a>
+                    <a href="#">
+                        <p style="font-size: 15px;color: rgb(255,255,255);margin-bottom: 30px;">Buzón de Sugerencias<br></p>
+                    </a>
+                </div>
+            </div>
+            <hr style="background-color:#ffffff">
+            <footer class="row text-center">
+                <div class="col">
+                    <p>© Copyright 2020 TecNM Campus Acapulco - Todos los Derechos Reservados<br></p>
+                    <p>Última actualización: 20/02/2020<br></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="~/js/gobmx.js"></script>
+    <script src="~/js/slick.min.js"></script>
+    <script src="~/js/slider_inferior.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/22b58b27af.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

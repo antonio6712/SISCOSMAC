@@ -1,0 +1,48 @@
+﻿@model SISCOSMAC.Web.ViewModels.UsuarioViewModel;
+
+
+
+<h3 class="text-center">Editar a Contraseña del Usuario: @Model.Nombre @Model.APaterno @Model.AMaterno</h3>
+
+<form method="post" ast-action="EditarCont">
+    <div class="row px-2 mx-2 border border-dark">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="UsuarioId" />
+
+        <input asp-for="Nombre" value="@Model.Nombre" type="hidden" />
+        <input asp-for="APaterno" value="@Model.APaterno" type="hidden" />
+        <input asp-for="AMaterno" value="@Model.AMaterno" type="hidden" />
+        <input asp-for="UsuarioLogin" value="@Model.UsuarioLogin" type="hidden" />
+        <input asp-for="Rol" value="@Model.Rol" type="hidden" />
+        <input asp-for="DepartamentoId" value="@Model.DepartamentoId" type="hidden" />
+
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="PasswordClara"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="PasswordClara" class="form-control" />
+                    <span asp-validation-for="PasswordClara" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group ">
+                <div class="col-8 offset-4">
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Actualizar</button>
+                            &nbsp;
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

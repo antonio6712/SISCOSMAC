@@ -1,0 +1,40 @@
+﻿@model SISCOSMAC.Web.ViewModels.LoginViewModel;
+
+
+<body class="bg-white  ">
+    <form class="form-signin "  asp-action="Login" asp-controller="Acceso" method="post" asp-route-returnurl="@ViewData["ReturnUrl"]">
+        <div class="text-center mb-4">
+            <img src="~/images/perfil-del-usuario.png" alt="" width="200" height="200" />
+
+            @*<img src="~/Imagenes_del_sistema/user-circle-solid.svg" alt="" width="280" height="280" />*@
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-label-group col-6" >
+            <input asp-for="UsuarioLogin" class="form-control" placeholder="Usuario" autofocus />
+            <label asp-for="UsuarioLogin"></label>
+            <span asp-validation-for="UsuarioLogin" class="text-danger"></span>
+        </div>
+
+        <div class="form-label-group  col-6">
+            <input asp-for="Password" class="form-control" placeholder="" />
+            <label asp-for="Password"></label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        @*<div class="form-group">
+            <div class="checkbox mb-3">
+            <label>
+            <input asp-for="Recuerdame" /> @Html.DisplayNameFor(model => model.Recuerdame)
+            </label>
+            </div>
+            </div>*@
+        <button class="btn btn-lg btn-primary btn-blockc col-6 " type="submit" >Iniciar sesión</button>
+        <div class="row">
+@*            <div class="col-6">
+                <a style="font-size:18px;" asp-action="RecuperarContrasena" asp-controller="Usuarios" class="text-black-50"><small><strong>¿Olvidaste tu contraseña?</strong></small></a>
+            </div>*@
+            @*<div class="col-3 text-right">
+                <a style="font-size:18px;" asp-action="Agregar" asp-controller="Usuarios" class="text-black-50"><small><strong>Registrarse</strong></small></a>
+            </div>*@
+        </div>
+    </form>
+</body>

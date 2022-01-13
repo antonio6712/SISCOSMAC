@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5c8b1d75-7104-4d88-83bd-5bf9390418fe": {
+      "ProjectGuid": "5c8b1d75-7104-4d88-83bd-5bf9390418fe",
+      "DisplayName": "SISCOSMAC.Web",
+      "ColorIndex": 0
+    },
+    "1ee83242-3d32-495e-ba86-902359a5cf94": {
+      "ProjectGuid": "1ee83242-3d32-495e-ba86-902359a5cf94",
+      "DisplayName": "SISCOSMAC.DAL",
+      "ColorIndex": 1
+    },
+    "dd833945-c0ef-4530-b362-c92b1765967a": {
+      "ProjectGuid": "dd833945-c0ef-4530-b362-c92b1765967a",
+      "DisplayName": "SISCOSMAC.AlgoritmoSeguridad",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
