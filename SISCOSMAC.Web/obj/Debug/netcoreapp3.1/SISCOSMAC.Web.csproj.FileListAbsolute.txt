@@ -306,3 +306,4 @@ C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\bin\Debug\netcoreapp3
 C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\EditarCont.cshtml.g.cs
 C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\Razor\Views\Acceso\Login.cshtml.g.cs
 C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Acceso.cshtml.g.cs
+C:\Users\anton\Documents\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\AccesoNegado.cshtml.g.cs

@@ -11,9 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using SISCOSMAC.AlgoritmoSeguridad;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SISCOSMAC.Web.Controllers
 {
+    [Authorize(Roles = "ADMINISTRADOR")]
     public class UsuariosController : Controller
     {
         private readonly IMapper _mapper;
@@ -124,15 +126,18 @@ namespace SISCOSMAC.Web.Controllers
 
             try
             {
-                var usuario = _mapper.Map<UsuarioViewModel, Usuario>(uvm);
+                //var usuario = _mapper.Map<UsuarioViewModel, Usuario>(uvm);
+                var usuario =  await unitofwork.UsuarioRepository.ObtenerAsin(match: x => x.UsuarioId == uvm.UsuarioId);
                 if (ModelState.IsValid)
                 {
-                    usuario.Nombre = usuario.Nombre.ToUpper();
-                    usuario.APaterno = usuario.APaterno.ToUpper();
-                    usuario.AMaterno = usuario.AMaterno.ToUpper();
-                    usuario.Rol = usuario.Rol.ToUpper();
-                    usuario.UsuarioLogin = usuario.UsuarioLogin.ToUpper();
-
+                    usuario.Nombre = uvm.Nombre.ToUpper();
+                    usuario.APaterno = uvm.APaterno.ToUpper();
+                    usuario.AMaterno = uvm.AMaterno.ToUpper();
+                    usuario.DepartamentoId = uvm.DepartamentoId;
+                    usuario.Rol = uvm.Rol.ToUpper();
+                    usuario.UsuarioLogin = uvm.UsuarioLogin.ToUpper();
+                                      
+                                        
                     await unitofwork.UsuarioRepository.ActualizarAsin(usuario, id);
                     await unitofwork.SaveAsync();
                     return RedirectToAction(nameof(Index));
@@ -141,6 +146,7 @@ namespace SISCOSMAC.Web.Controllers
             }
             catch (Exception ex)
             {
+
             }
 
             ViewBag.DepartamentoId = new SelectList(departamentoLista, "DepartamentoId", "NombreDepartamento", uvm.UsuarioId);
@@ -166,7 +172,9 @@ namespace SISCOSMAC.Web.Controllers
         {
             try
             {
-                var usuario = _mapper.Map<UsuarioViewModel, Usuario>(uvm);
+                //var usuario = _mapper.Map<UsuarioViewModel, Usuario>(uvm);
+                var usuario = await unitofwork.UsuarioRepository.ObtenerAsin(match: x => x.UsuarioId == uvm.UsuarioId);
+
                 if (ModelState.IsValid)
                 {
                     usuario.PasswordSal = Hash.GenerarSal();

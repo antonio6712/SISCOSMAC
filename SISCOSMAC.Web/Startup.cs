@@ -43,6 +43,7 @@ namespace SISCOSMAC.Web
             services.AddAuthentication("SiscosmacCookieAuthenticationSheme")
                 .AddCookie("SiscosmacCookieAuthenticationSheme", opciones => {
                     opciones.LoginPath = "/Acceso/Login";
+                    opciones.AccessDeniedPath = "/Home/AccesoNegado";
                 });
 
             services.Configure<CookiePolicyOptions>(options =>

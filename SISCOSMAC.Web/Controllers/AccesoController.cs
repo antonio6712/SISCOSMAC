@@ -58,7 +58,7 @@ namespace SISCOSMAC.Web.Controllers
                 List<Claim> reclamaciones = new List<Claim>();
                 //reclamaciones.Add(new Claim(ClaimTypes.Sid, con.NumControl));
                 reclamaciones.Add(new Claim(ClaimTypes.Name, con.Nombre + " " + con.APaterno));
-                reclamaciones.Add(new Claim(ClaimTypes.Role, "ROLPRUEBA"));
+                reclamaciones.Add(new Claim(ClaimTypes.Role, con.Rol));
                 //reclamaciones.Add(new Claim(ClaimTypes.IsPersistent, model.Recuerdame.ToString()));
 
                 var identidadUsuario = new ClaimsIdentity(reclamaciones, "login");

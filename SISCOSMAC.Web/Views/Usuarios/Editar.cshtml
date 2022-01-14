@@ -16,11 +16,14 @@
 
 <h3 class="text-center">Crear un Nuevo Usuario</h3>
 
-<form method="post" ast-action="Crear">
+<form method="post" ast-action="Editar">
     <div class="row px-2 mx-2 border border-dark">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="UsuarioId" />
         <input asp-for="PasswordClara" value="1" type="hidden" />
+       @* <input asp-for="PasswordSal" value="@Model.PasswordSal" type="hidden" />
+        <input asp-for="PasswordHash" value="@Model.PasswordHash" type="hidden" />*@
+        
         <div class="col-10 offset-1 mt-4">
             <div class="form-group row">
                 <div class="col-4">

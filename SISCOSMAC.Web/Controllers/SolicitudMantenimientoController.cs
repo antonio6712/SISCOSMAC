@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SISCOSMAC.DAL.UFW;
 using SISCOSMAC.Web.ViewModels;
 using System.Threading.Tasks;
 
+
 namespace SISCOSMAC.Web.Controllers
 {
+    [Authorize]
     public class SolicitudMantenimientoController : Controller
     {
         private readonly IMapper _mapper;
