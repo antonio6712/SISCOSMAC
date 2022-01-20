@@ -71,6 +71,7 @@ namespace SISCOSMAC.Web.ViewModels
         public string NombreDeptoPer { get; set; }
 
 
+
         public async Task<List<UsuarioViewModel>> ObtenerUsuarios()
         {
             List<UsuarioViewModel> model = new List<UsuarioViewModel>();
@@ -91,7 +92,7 @@ namespace SISCOSMAC.Web.ViewModels
 
         public async Task<UsuarioViewModel> ObtenerUsuario(string usuarioLogin)
         {
-            var c = (from u in await UnitOfWork.UsuarioRepository.ObtenerTodosAsin()
+            var c = (from u in await UnitOfWork.UsuarioRepository.ObtenerTodosAsin(includeProperties: "departamento")
                      where u.UsuarioLogin == usuarioLogin
                      select u).FirstOrDefault();
             var model = mapper.Map<Usuario, UsuarioViewModel>(c);

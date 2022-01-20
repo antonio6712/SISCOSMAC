@@ -155,6 +155,7 @@ namespace SISCOSMAC.Web.Controllers
         }
 
         //Editar La Contraseña de Un Usuario
+        [HttpGet]
         public async Task<IActionResult> EditarCont(int? id)
         {
             var modelo = await unitofwork.UsuarioRepository.ObtenerAsin(match: x => x.UsuarioId == id);

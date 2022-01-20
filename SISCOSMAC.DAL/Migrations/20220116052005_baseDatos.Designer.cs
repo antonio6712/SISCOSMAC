@@ -9,8 +9,8 @@ using SISCOSMAC.DAL.DbContextSql;
 namespace SISCOSMAC.DAL.Migrations
 {
     [DbContext(typeof(ContextSql))]
-    [Migration("20220104164502_addHashSal")]
-    partial class addHashSal
+    [Migration("20220116052005_baseDatos")]
+    partial class baseDatos
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

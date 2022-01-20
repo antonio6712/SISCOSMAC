@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SISCOSMAC.Web.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "ADMINISTRADOR")]
     public class DepartamentosController : Controller
     {
 
@@ -26,7 +26,7 @@ namespace SISCOSMAC.Web.Controllers
         }
 
         [HttpGet]
-        public  IActionResult Index()
+        public IActionResult Index()
         {
 
             return View();
@@ -57,11 +57,11 @@ namespace SISCOSMAC.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Editar( int id)
-        {                      
+        public async Task<IActionResult> Editar(int id)
+        {
 
-            var modelo = await  unitofwork.DepartamentoRepository.ObtenerPorIdAsin(id);
-            
+            var modelo = await unitofwork.DepartamentoRepository.ObtenerPorIdAsin(id);
+
 
             if (modelo == null)
             {
@@ -85,7 +85,7 @@ namespace SISCOSMAC.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            
+
 
             return View(departamentoViewModel);
         }
@@ -93,7 +93,7 @@ namespace SISCOSMAC.Web.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
-        {            
+        {
             return Json(new { data = await unitofwork.DepartamentoRepository.ObtenerTodosAsin() });
         }
 

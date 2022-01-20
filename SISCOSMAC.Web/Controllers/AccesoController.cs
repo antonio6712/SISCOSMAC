@@ -56,9 +56,10 @@ namespace SISCOSMAC.Web.Controllers
                 //var us = await UnitOfWork.UsuarioRepository.ObtenerAsin(model);
 
                 List<Claim> reclamaciones = new List<Claim>();
-                //reclamaciones.Add(new Claim(ClaimTypes.Sid, con.NumControl));
+                reclamaciones.Add(new Claim(ClaimTypes.GroupSid, con.NombreDeptoPer));
                 reclamaciones.Add(new Claim(ClaimTypes.Name, con.Nombre + " " + con.APaterno));
                 reclamaciones.Add(new Claim(ClaimTypes.Role, con.Rol));
+                
                 //reclamaciones.Add(new Claim(ClaimTypes.IsPersistent, model.Recuerdame.ToString()));
 
                 var identidadUsuario = new ClaimsIdentity(reclamaciones, "login");

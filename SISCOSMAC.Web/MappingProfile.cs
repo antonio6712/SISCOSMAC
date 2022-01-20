@@ -12,7 +12,7 @@ namespace SISCOSMAC.Web
     {
         public MappingProfile()
         {
-          
+           //CreateMap<source,destination>
             CreateMap<Departamento, DepartamentoViewModel>()
                 .ForMember(d => d.NombreDepto, y => y.MapFrom(z => z.NombreDepartamento));
             CreateMap<DepartamentoViewModel, Departamento>()

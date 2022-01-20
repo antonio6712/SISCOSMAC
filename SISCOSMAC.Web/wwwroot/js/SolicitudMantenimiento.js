@@ -15,21 +15,28 @@ function cargarDatatable() {
         },
         "columns": [
             { "data": "folio", "width": "5%" },
-            { "data": "areaSolicitente", "width": "50%" },
-            { "data": "fechaEleboracion", "width": "20%" },
+            { "data": "areaSolicitante", "width": "20%" },
+            { "data": "fechaElaboracion", "width": "20%" },
             {
-                "data": "solicitudId",
+                "data": "areaSolicitente",
                 "render": function (data) {
                     return `<div class="text-center">
-                            <a href='/SolicitudMantenimiento/Editar/${data}' class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
-                            <i class='fas fa-edit'></i> Editar
+
+                            <a href='/SolicitudMantenimiento/EditarSolicitud/${data}' class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
+                                <i class='fas fa-edit'></i> Editar
                             </a>
                             
                             <a onclick=Delete("/SolicitudMantenimiento/Delete/${data}") class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
-                            <i class='fas fa-trash-alt'></i> Borrar
+                                <i class='fas fa-trash-alt'></i> Borrar
                             </a>
+
+                            <a href="/SolicitudMantenimiento/VerDatos/${data}" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
+                                <i class="fas fa-plus-square"></i> Orden de trabajo   
+                            </a>
+
+
                             `;
-                }, "width": "30%"
+                }, "width": "50%"
             }
         ],
         "language": {

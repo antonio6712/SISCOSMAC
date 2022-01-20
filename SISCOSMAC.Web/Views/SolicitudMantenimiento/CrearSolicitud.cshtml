@@ -1,0 +1,84 @@
+﻿@model SISCOSMAC.Web.ViewModels.SolicitudMantenimientoCorrectivoVM;
+
+@{
+    ViewData["Title"] = "Crear Solicitud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h3 class="text-center">Solicitud de Mantenimiento Correctivo</h3>
+
+<form method="post" ast-action="CrearSolicitud">
+    <div class="row px-2 mx-2 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="AreaSolicitante" value="1" type="hidden" />
+        <input asp-for="UsuarioId" value="1" type="hidden" />
+
+        <div class="col-10 offset-1 mt-4">
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="DepartamentoDirigido"></label>
+                </div>
+                <div class="col-8">
+                    <select asp-for="DepartamentoDirigido" class="form-control">
+                        <option selected value="">Selecciona un departamento</option>
+                        <option value="Recursos Materiales">Recursos Materiales</option>
+                        <option value="Mantenimiento de Equipo">Mantenimiento de Equipo</option>
+                        <option value="Centro de Computo">Centro de Computo</option>
+                    </select>
+                    <span id="errorMgspan" asp-validation-for="DepartamentoDirigido" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Folio"></label>
+                </div>
+                <div class="col-4">
+                    <input asp-for="Folio" class="form-control" />
+                    <span asp-validation-for="Folio" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="NombreSolicitante"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="NombreSolicitante" class="form-control" />
+                    <span asp-validation-for="NombreSolicitante" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="FechaElaboracion"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="FechaElaboracion" class="form-control" />
+                    <span asp-validation-for="FechaElaboracion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="DescripcionServicios"></label>
+                </div>
+                <div class="col-8">
+                    <textarea asp-for="DescripcionServicios" class="form-control"></textarea>
+                    <span asp-validation-for="DescripcionServicios" class="text-danger"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group ">
+                <div class="col-8 offset-4">
+                    <partial name="_VistaCrearVolver" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

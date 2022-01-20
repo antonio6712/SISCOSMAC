@@ -16,33 +16,31 @@ namespace SISCOSMAC.Web.ViewModels
         
         public int? Folio { get; set; }
 
-        [Required]
-        [Display(Name = "Indicador")]
+        [Required(ErrorMessage ="Este campo es requerido")]
+        [Display(Name = "Departamento Dirigido")]
         public string DepartamentoDirigido { get; set; }
 
         [Required]
         [Display(Name = "Area Solicitante")]
         public string AreaSolicitante { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo es requerido")]
         [Display(Name = "Nombre y Firma del Solicitante")]
         public string NombreSolicitante { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo es requerido")]
         [Display(Name = "Fecha de Elaboración")]
         public DateTime FechaElaboracion { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo es requerido")]
         [Display(Name = "Descripción del Servicio ")]
         public String DescripcionServicios { get; set; }
-
+        
         [Required]
         public int UsuarioId { get; set; }
-
-        [Required]
+                
         public string   NombreUsuSoli { get; set; }
         
-        [ForeignKey("UsuarioId")]
-        public Usuario usuario { get; set; }
+        
     }
 }

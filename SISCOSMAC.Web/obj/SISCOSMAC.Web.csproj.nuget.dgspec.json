@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj": {}
+    "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj": {
+    "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj",
         "projectName": "SISCOSMAC.AlgoritmoSeguridad",
-        "projectPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj": {
+    "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
         "projectName": "SISCOSMAC.DAL",
-        "projectPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -152,14 +152,14 @@
         }
       }
     },
-    "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj": {
+    "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj",
         "projectName": "SISCOSMAC.Web",
-        "projectPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\SISCOSMAC.Web.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -176,11 +176,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj": {
-                "projectPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj"
+              "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj": {
+                "projectPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj"
               },
-              "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj": {
-                "projectPath": "C:\\Users\\anton\\Documents\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj"
+              "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj": {
+                "projectPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj"
               }
             }
           }
@@ -198,6 +198,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.17, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
