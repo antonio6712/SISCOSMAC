@@ -18,11 +18,11 @@ function cargarDatatable() {
             { "data": "areaSolicitante", "width": "20%" },
             { "data": "fechaElaboracion", "width": "20%" },
             {
-                "data": "areaSolicitente",
+                "data": "solicitudId",
                 "render": function (data) {
                     return `<div class="text-center">
 
-                        <a href='/SolicitudMantenimiento/EditarSolicitud/${data}' class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
+                        <a href='/solicitudMantenimiento/EditarSolicitud/${data}' class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
                             <i class='fas fa-edit'></i> Editar
                         </a>
 
@@ -30,7 +30,7 @@ function cargarDatatable() {
                             <i class='fas fa-trash-alt'></i> Borrar
                         </a>
                                                         
-                        <a href="/SolicitudMantenimiento/VerDatos/${data}" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
+                        <a href="/SolicitudMantenimiento/GenerarPDF/${data}" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
                             <i class="fas fa-plus-square"></i> Generar PDF   
                         </a>
 

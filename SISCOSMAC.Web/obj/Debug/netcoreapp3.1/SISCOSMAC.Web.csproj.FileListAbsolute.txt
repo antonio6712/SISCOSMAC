@@ -740,3 +740,4 @@ C:\Users\anton\Desktop\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\bin\Debug\netco
 C:\Users\anton\Desktop\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\anton\Desktop\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Users\anton\Desktop\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\SISCOSMAC.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\anton\Desktop\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\Razor\Views\SolicitudMantenimiento\EditarSolicitud.cshtml.g.cs

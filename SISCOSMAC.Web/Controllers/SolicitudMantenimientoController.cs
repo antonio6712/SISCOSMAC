@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SISCOSMAC.DAL.Models;
 using SISCOSMAC.DAL.UFW;
 using SISCOSMAC.Web.ViewModels;
@@ -31,7 +32,7 @@ namespace SISCOSMAC.Web.Controllers
         [HttpGet]
         public IActionResult CrearSolicitud()
         {
-            var p = ConsultarClaim(ClaimTypes.GroupSid);
+
             return View();
         }
 
@@ -41,84 +42,78 @@ namespace SISCOSMAC.Web.Controllers
         {
             var solicitud = _mapper.Map<SolicitudMantenimientoCorrectivoVM, SolicitudMantenimientoCorrectivo>(solicitudMantenimientoCorrectivoVM);
 
-            
 
             if (ModelState.IsValid)
             {
+                //Traemos datos del claim
                 solicitud.AreaSolicitante = ConsultarClaim(ClaimTypes.GroupSid);
-                solicitud.UsuarioId = solicitud.UsuarioId;
+
+                string idusu = ConsultarClaim(ClaimTypes.UserData);
+                var id = Convert.ToInt32(idusu);
+                solicitud.UsuarioId = id;
 
                 solicitud.Folio = solicitudMantenimientoCorrectivoVM.Folio;
+
                 solicitud.DepartamentoDirigido = solicitudMantenimientoCorrectivoVM.DepartamentoDirigido.ToUpper();
-                                
+
                 await unitofwork.SolicitudRepository.AgregarAsin(solicitud);
                 await unitofwork.SaveAsync();
 
                 return RedirectToAction(nameof(Index));
             }
 
+
             return View(solicitudMantenimientoCorrectivoVM);
 
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> EditarSolicitud(int id)
-        //{
-        //    UsuarioViewModel uvm = new UsuarioViewModel();
-        //    var departamentoLista = (from u in await unitofwork.DepartamentoRepository.ObtenerTodosAsin()
-        //                             select new { u.DepartamentoId, NombreDepartamento = u.NombreDepartamento }).ToList();
+        [HttpGet]
+        public async Task<IActionResult> EditarSolicitud(int id)
+        {          
 
-        //    var modelo = await unitofwork.UsuarioRepository.ObtenerPorIdAsin(id);
+            var modelo = await unitofwork.SolicitudRepository.ObtenerPorIdAsin(id);
 
-        //    if (modelo == null)
-        //    {
-        //        return NotFound();
-        //    }
+            if (modelo == null)
+            {
+                return NotFound();
+            }
 
-        //    ViewBag.DepartamentoId = new SelectList(departamentoLista, "DepartamentoId", "NombreDepartamento", uvm.UsuarioId);
+            var solicitud = _mapper.Map<SolicitudMantenimientoCorrectivo, SolicitudMantenimientoCorrectivoVM>(modelo);
 
-        //    var usuario = _mapper.Map<Usuario, UsuarioViewModel>(modelo);
-
-        //    return View(usuario);
-        //}
+            return View(solicitud);
+        }
 
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> EditarSolicitud(UsuarioViewModel uvm, int id)
-        //{
-        //    var departamentoLista = (from u in await unitofwork.DepartamentoRepository.ObtenerTodosAsin()
-        //                             select new { u.DepartamentoId, NombreDepartamento = u.NombreDepartamento }).ToList();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditarSolicitud(SolicitudMantenimientoCorrectivoVM svm, int id)
+        {
+            
+            try
+            {
+                
+                var solicitud = await unitofwork.SolicitudRepository.ObtenerAsin(match: x => x.SolicitudId == id);
+                if (ModelState.IsValid)
+                {
+                    solicitud.DepartamentoDirigido = svm.DepartamentoDirigido;
+                    solicitud.Folio=svm.Folio;
+                    solicitud.NombreSolicitante = svm.NombreSolicitante;
+                    solicitud.FechaElaboracion = svm.FechaElaboracion;
+                    solicitud.DescripcionServicios = svm.DescripcionServicios;                   
 
-        //    try
-        //    {
-        //        //var usuario = _mapper.Map<UsuarioViewModel, Usuario>(uvm);
-        //        var usuario = await unitofwork.UsuarioRepository.ObtenerAsin(match: x => x.UsuarioId == uvm.UsuarioId);
-        //        if (ModelState.IsValid)
-        //        {
-        //            usuario.Nombre = uvm.Nombre.ToUpper();
-        //            usuario.APaterno = uvm.APaterno.ToUpper();
-        //            usuario.AMaterno = uvm.AMaterno.ToUpper();
-        //            usuario.DepartamentoId = uvm.DepartamentoId;
-        //            usuario.Rol = uvm.Rol.ToUpper();
-        //            usuario.UsuarioLogin = uvm.UsuarioLogin.ToUpper();
+                    await unitofwork.SolicitudRepository.ActualizarAsin(solicitud, id);
+                    await unitofwork.SaveAsync();
+                    return RedirectToAction(nameof(Index));
+                }
 
+            }
+            catch (Exception ex)
+            {
 
-        //            await unitofwork.UsuarioRepository.ActualizarAsin(usuario, id);
-        //            await unitofwork.SaveAsync();
-        //            return RedirectToAction(nameof(Index));
-        //        }
+            }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-
-        //    ViewBag.DepartamentoId = new SelectList(departamentoLista, "DepartamentoId", "NombreDepartamento", uvm.UsuarioId);
-
-        //    return View(uvm);
-        //}
+            return View(svm);
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetAll(SolicitudMantenimientoCorrectivoVM solicitudMantenimientoCorrectivoVM)
@@ -127,7 +122,7 @@ namespace SISCOSMAC.Web.Controllers
 
             solicitud.AreaSolicitante = ConsultarClaim(ClaimTypes.GroupSid);
 
-            return Json(new { data = await unitofwork.SolicitudRepository.ObtenerTodosAsin(match: x=>x.AreaSolicitante == solicitud.AreaSolicitante ) });
+            return Json(new { data = await unitofwork.SolicitudRepository.ObtenerTodosAsin(match: x => x.AreaSolicitante == solicitud.AreaSolicitante) });
         }
 
         public string ConsultarClaim(string claimType)

@@ -126,7 +126,6 @@ namespace SISCOSMAC.Web.Controllers
 
             try
             {
-                //var usuario = _mapper.Map<UsuarioViewModel, Usuario>(uvm);
                 var usuario =  await unitofwork.UsuarioRepository.ObtenerAsin(match: x => x.UsuarioId == uvm.UsuarioId);
                 if (ModelState.IsValid)
                 {

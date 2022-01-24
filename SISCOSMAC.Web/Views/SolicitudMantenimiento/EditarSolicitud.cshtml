@@ -1,22 +1,23 @@
-﻿@model SISCOSMAC.Web.ViewModels.SolicitudMantenimientoCorrectivoVM;
+﻿@model SISCOSMAC.Web.ViewModels.SolicitudMantenimientoCorrectivoVM
 
 @{
-    ViewData["Title"] = "Crear Solicitud";
+    ViewData["Title"] = "Ediar Solicitud";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <h3 class="text-center">Solicitud de Mantenimiento Correctivo</h3>
 
+    
 
-
-<h3 class="text-center">Solicitud de Mantenimiento Correctivo</h3>
-
-<form method="post" ast-action="CrearSolicitud">
+</head>
+<form method="post" ast-action="EditarSolicitud">
     <div class="row px-2 mx-2 border">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input asp-for="AreaSolicitante" value="1" type="hidden" />
         <input asp-for="UsuarioId" value="1" type="hidden" />
 
         <div class="col-10 offset-1 mt-4">
-            
+
             <div class="form-group row">
                 <div class="col-4">
                     <label asp-for="DepartamentoDirigido"></label>
@@ -44,10 +45,10 @@
 
             <div class="form-group row">
                 <div class="col-4">
-                    <label asp-for="NombreSolicitante"></label>
+                    <label asp-for="NombreSolicitante" ></label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="NombreSolicitante" class="form-control" />
+                    <input asp-for="NombreSolicitante" class="form-control" onkeyup="mayus(this);"/>
                     <span asp-validation-for="NombreSolicitante" class="text-danger"></span>
                 </div>
             </div>
@@ -67,7 +68,7 @@
                     <label asp-for="DescripcionServicios"></label>
                 </div>
                 <div class="col-8">
-                    <textarea asp-for="DescripcionServicios" class="form-control"></textarea>
+                    <textarea asp-for="DescripcionServicios" class="form-control" onkeyup="mayus(this);"></textarea>
                     <span asp-validation-for="DescripcionServicios" class="text-danger"></span>
                 </div>
             </div>
@@ -76,7 +77,15 @@
 
             <div class="form-group ">
                 <div class="col-8 offset-4">
-                    <partial name="_VistaCrearVolver" />
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Actualizar</button>
+                            &nbsp;
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
