@@ -24,7 +24,9 @@ namespace SISCOSMAC.Web
 
             CreateMap<SolicitudMantenimientoCorrectivoVM, SolicitudMantenimientoCorrectivo>();
             CreateMap<SolicitudMantenimientoCorrectivo, SolicitudMantenimientoCorrectivoVM>();
-
+            
+            CreateMap<OrdenTrabajoVM, OrdenTrabajo>();
+            CreateMap<OrdenTrabajo, OrdenTrabajoVM>();
 
         }
     }

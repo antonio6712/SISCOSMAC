@@ -49,6 +49,15 @@ namespace SISCOSMAC.DAL.UFW
             }
         }
 
+        private IGenericRepository<OrdenTrabajo> _ordenRepository;
+        public IGenericRepository<OrdenTrabajo> OrdenRepository
+        {
+            get
+            {
+                return _ordenRepository ??= new GenericRepository<OrdenTrabajo>(_db);
+            }
+        }
+
         public async Task<int> SaveAsync()
         {
             return await _db.SaveChangesAsync();

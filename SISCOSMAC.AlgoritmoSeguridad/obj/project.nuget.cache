@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BfxeMEu8QogMdF0qT5OZp+YXWzaYdg8hcRcNFeFGy7KXAkY6bzc6gJxjMWvjz+ZDlbnukRESMRH431KQSTZmWA==",
+  "dgSpecHash": "UtSCpsg4xRHLTotHp72kISz+fst4v1JlWiqaOkx46vg6ohji76NhEt3OyCEU/RMl1EUaUaBLBHS2GTi/ERFJZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj",
+  "projectFilePath": "C:\\Users\\anton\\Documents\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.AlgoritmoSeguridad\\SISCOSMAC.AlgoritmoSeguridad.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

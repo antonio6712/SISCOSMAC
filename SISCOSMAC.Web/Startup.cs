@@ -1,6 +1,9 @@
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -53,9 +56,13 @@ namespace SISCOSMAC.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
             services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            
 
         }
 
@@ -71,9 +78,13 @@ namespace SISCOSMAC.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
+
+
             app.UseAuthentication();
             app.UseStaticFiles();
             app.UseRouting();
+
+            
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

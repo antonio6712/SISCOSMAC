@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220131160336_ModeloOrdenTrabajo.cs" />
+    <Compile Remove="Migrations\20220131160336_ModeloOrdenTrabajo.Designer.cs" />
+    <Compile Remove="Migrations\20220131163019_ModeloOrdenTrabajoID.cs" />
+    <Compile Remove="Migrations\20220131163019_ModeloOrdenTrabajoID.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.17">
       <PrivateAssets>all</PrivateAssets>
@@ -15,10 +22,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MySql.EntityFrameworkCore" Version="3.1.17" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

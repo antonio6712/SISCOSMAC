@@ -1,0 +1,132 @@
+﻿@model SISCOSMAC.Web.ViewModels.OrdenTrabajoVM;
+
+@{
+    ViewData["Title"] = "Crear Orden Trabajo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+
+    <script type="text/javascript">
+        function validateDropdown() {
+            var selectedval = $('#Mantenimiento').find(":selected").text();
+            if (selectedval == "") {
+                $('#errorMgspan').text("* Campos requeridos");
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<h3 class="text-center">Orden de Trabajo</h3>
+
+<form method="post" ast-action="EditarOrden">
+    <div class="row px-2 mx-2 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="col-10 offset-1 mt-4">
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="NumeroControl"></label>
+                </div>
+                <div class="col-4">
+                    <input asp-for="NumeroControl" class="form-control" />
+                    <span asp-validation-for="NumeroControl" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Mantenimiento"></label>
+                </div>
+                <div class="col-8">
+                    <select asp-for="Mantenimiento" class="form-control">
+                        <option selected value="">Selecciona un Tipo de Mantenimiento</option>
+                        <option value="Interno">Interno</option>
+                    </select>
+                    <span id="errorMgspan" asp-validation-for="Mantenimiento" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="TipoServicio"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="TipoServicio" class="form-control" />
+                    <span asp-validation-for="TipoServicio" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Asignado"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Asignado" class="form-control" />
+                    <span asp-validation-for="Asignado" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="FechaRealizacion"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="FechaRealizacion" class="form-control" />
+                    <span asp-validation-for="FechaRealizacion" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="TrabajoRealizado"></label>
+                </div>
+                <div class="col-8">
+                    <textarea asp-for="TrabajoRealizado" class="form-control"></textarea>
+                    <span asp-validation-for="TrabajoRealizado" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="VerificadoLiberado"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="VerificadoLiberado" class="form-control" />
+                    <span asp-validation-for="VerificadoLiberado" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="AprobadoPor"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="AprobadoPor" class="form-control" />
+                    <span asp-validation-for="AprobadoPor" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <br />
+
+            <div class="form-group ">
+                <div class="col-8 offset-4">
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary form-control">Actualizar</button>
+                            &nbsp;
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success form-control">Volver a Lista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

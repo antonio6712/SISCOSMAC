@@ -15,6 +15,9 @@ namespace SISCOSMAC.DAL.UFW
 
         IGenericRepository<SolicitudMantenimientoCorrectivo> SolicitudRepository { get; }
 
+        IGenericRepository<OrdenTrabajo> OrdenRepository { get; }
+
+
         void Dispose();
 
         Task<int> SaveAsync();

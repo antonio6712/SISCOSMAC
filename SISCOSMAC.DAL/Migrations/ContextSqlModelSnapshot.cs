@@ -35,6 +35,52 @@ namespace SISCOSMAC.DAL.Migrations
                     b.ToTable("Departamento");
                 });
 
+            modelBuilder.Entity("SISCOSMAC.DAL.Models.OrdenTrabajo", b =>
+                {
+                    b.Property<int>("OrdenId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("AprobadoPor")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Asignado")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("FechaRealizacion")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Mantenimiento")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("NumeroControl")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SolicitudId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TipoServicio")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TrabajoRealizado")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("VerificadoLiberado")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("OrdenId");
+
+                    b.HasIndex("SolicitudId");
+
+                    b.ToTable("OrdenTrabajo");
+                });
+
             modelBuilder.Entity("SISCOSMAC.DAL.Models.SolicitudMantenimientoCorrectivo", b =>
                 {
                     b.Property<int>("SolicitudId")
@@ -117,6 +163,15 @@ namespace SISCOSMAC.DAL.Migrations
                     b.HasIndex("DepartamentoId");
 
                     b.ToTable("Usuario");
+                });
+
+            modelBuilder.Entity("SISCOSMAC.DAL.Models.OrdenTrabajo", b =>
+                {
+                    b.HasOne("SISCOSMAC.DAL.Models.SolicitudMantenimientoCorrectivo", "solicitud")
+                        .WithMany()
+                        .HasForeignKey("SolicitudId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SISCOSMAC.DAL.Models.SolicitudMantenimientoCorrectivo", b =>

@@ -5,7 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
+<script>
+        function mayus(e) {
+            e.value = e.value.toUpperCase();
+        }
+    </script>
 
 <h3 class="text-center">Solicitud de Mantenimiento Correctivo</h3>
 
@@ -31,23 +35,13 @@
                     <span id="errorMgspan" asp-validation-for="DepartamentoDirigido" class="text-danger"></span>
                 </div>
             </div>
-
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Folio"></label>
-                </div>
-                <div class="col-4">
-                    <input asp-for="Folio" class="form-control" />
-                    <span asp-validation-for="Folio" class="text-danger"></span>
-                </div>
-            </div>
-
+                        
             <div class="form-group row">
                 <div class="col-4">
                     <label asp-for="NombreSolicitante"></label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="NombreSolicitante" class="form-control" />
+                    <input asp-for="NombreSolicitante" class="form-control" onkeyup="mayus(this)" />
                     <span asp-validation-for="NombreSolicitante" class="text-danger"></span>
                 </div>
             </div>
@@ -67,7 +61,7 @@
                     <label asp-for="DescripcionServicios"></label>
                 </div>
                 <div class="col-8">
-                    <textarea asp-for="DescripcionServicios" class="form-control"></textarea>
+                    <textarea asp-for="DescripcionServicios" class="form-control" onkeyup="mayus(this)"></textarea>
                     <span asp-validation-for="DescripcionServicios" class="text-danger"></span>
                 </div>
             </div>

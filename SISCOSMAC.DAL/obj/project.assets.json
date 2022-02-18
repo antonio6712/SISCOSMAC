@@ -1683,11 +1683,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\anton\\Documents\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
       "projectName": "SISCOSMAC.DAL",
-      "projectPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
+      "projectPath": "C:\\Users\\anton\\Documents\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
       "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\obj\\",
+      "outputPath": "C:\\Users\\anton\\Documents\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1752,7 +1752,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

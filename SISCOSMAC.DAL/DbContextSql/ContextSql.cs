@@ -13,6 +13,8 @@ namespace SISCOSMAC.DAL.DbContextSql
         public DbSet<Departamento> Departamento { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<SolicitudMantenimientoCorrectivo> SolicitudMantenimientoCorrectivo { get; set; }
+        public DbSet<OrdenTrabajo> OrdenTrabajo { get; set; }
+
     }
 
 }

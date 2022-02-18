@@ -26,7 +26,7 @@ function cargarDatatable() {
                             <i class='fas fa-edit'></i> Editar
                         </a>
 
-                        <a onclick=Delete("/SolicitudMantenimiento/Delete/${data}") class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
+                        <a onclick=Delete("/SolicitudMantenimiento/EliminarSolicitud/${data}") class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
                             <i class='fas fa-trash-alt'></i> Borrar
                         </a>
                                                         

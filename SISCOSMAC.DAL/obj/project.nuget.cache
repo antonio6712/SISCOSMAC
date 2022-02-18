@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+VdkD6c/ypcF9Ejx7eR5HlMguPmVzsPAbvOp6t1VEoWKyTKEzILfk2vl269EUvhreGnJ+zD7xpWnSttlid78/Q==",
+  "dgSpecHash": "9NHpjPqTP35T0zKgh8LR/OjnnQjqnnPmFvcajmdRgE781uQlHGBmfzTrV6holrXB+jyFloH/13dGooNehogFzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
+  "projectFilePath": "C:\\Users\\anton\\Documents\\Antonio\\PROYECTOS\\SISCOSMAC\\SISCOSMAC.DAL\\SISCOSMAC.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anton\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

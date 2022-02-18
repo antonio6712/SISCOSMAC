@@ -48,12 +48,25 @@ namespace SISCOSMAC.Web.Controllers
                 //Traemos datos del claim
                 solicitud.AreaSolicitante = ConsultarClaim(ClaimTypes.GroupSid);
 
+                var BuscarFolio = (from f in await unitofwork.SolicitudRepository.ObtenerTodosAsin()
+                                     where f.AreaSolicitante == solicitud.AreaSolicitante
+                                   select new {f.Folio.Value}).LastOrDefault();
+                               
+                int folioValor = BuscarFolio.Value;
+                
+                if (BuscarFolio==null)
+                {
+                    solicitud.Folio = 1;
+                }
+                else
+                {
+                    solicitud.Folio = folioValor + 1;
+                }
+                
                 string idusu = ConsultarClaim(ClaimTypes.UserData);
                 var id = Convert.ToInt32(idusu);
                 solicitud.UsuarioId = id;
-
-                solicitud.Folio = solicitudMantenimientoCorrectivoVM.Folio;
-
+                                
                 solicitud.DepartamentoDirigido = solicitudMantenimientoCorrectivoVM.DepartamentoDirigido.ToUpper();
 
                 await unitofwork.SolicitudRepository.AgregarAsin(solicitud);
@@ -123,6 +136,21 @@ namespace SISCOSMAC.Web.Controllers
             solicitud.AreaSolicitante = ConsultarClaim(ClaimTypes.GroupSid);
 
             return Json(new { data = await unitofwork.SolicitudRepository.ObtenerTodosAsin(match: x => x.AreaSolicitante == solicitud.AreaSolicitante) });
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> EliminarSolicitud(int id)
+        {
+            var objFormDb = await unitofwork.SolicitudRepository.ObtenerPorIdAsin(id);
+            if (objFormDb == null)
+            {
+                return Json(new { success = false, message = "Error Borrando la solicitud" });
+            }
+            unitofwork.SolicitudRepository.EliminarAsin(objFormDb);
+            await unitofwork.SaveAsync();
+            return Json(new { success = true, message = "Solicitud Borrada Con ¡EXITO!" });
+
+
         }
 
         public string ConsultarClaim(string claimType)
