@@ -25,7 +25,7 @@
                     <label asp-for="Nombre"></label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Nombre" class="form-control" />
+                    <input asp-for="Nombre" class="form-control" onkeyup="mayus(this)"/>
                     <span asp-validation-for="Nombre" class="text-danger"></span>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <label asp-for="APaterno"></label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="APaterno" class="form-control" />
+                    <input asp-for="APaterno" class="form-control" onkeyup="mayus(this)"/>
                     <span asp-validation-for="APaterno" class="text-danger"></span>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <label asp-for="AMaterno"></label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="AMaterno" class="form-control" />
+                    <input asp-for="AMaterno" class="form-control" onkeyup="mayus(this)"/>
                     <span asp-validation-for="AMaterno" class="text-danger"></span>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                     <label asp-for="UsuarioLogin"></label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="UsuarioLogin" class="form-control" />
+                    <input asp-for="UsuarioLogin" class="form-control" onkeyup="mayus(this)"/>
                     <span asp-validation-for="UsuarioLogin" class="text-danger"></span>
                 </div>
             </div>
@@ -74,8 +74,12 @@
                 <div class="col-4">
                     <label asp-for="Rol"></label>
                 </div>
-                <div class="col-8">
-                    <input asp-for="Rol" class="form-control" />
+                <div class="col-8">                    
+                    <select asp-for="Rol" class="form-control" >
+                        <option selected value="">Selecciona un Rol</option>
+                        <option value="MANTENIMIENTO">DEPARTAMENTO DE MATENIMIENTO</option>
+                        <option value="USUARIO">DEPARTAMENTO GENERAL</option>
+                    </select>
                     <span asp-validation-for="Rol" class="text-danger"></span>
                 </div>
             </div>

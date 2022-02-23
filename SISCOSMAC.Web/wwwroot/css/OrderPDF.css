@@ -2,7 +2,7 @@
 
 .Tsuperior {    
     border:solid 2px ;
-        margin: 0 auto;
+    margin-left:50px;
 }
 
 .Tsuperior thead > tr > th{
@@ -21,16 +21,15 @@
 }
 
 .Tmedio {
-    border: solid 2px;
-    margin:0 auto;
-    width:100%;
+    border: solid 2px;     
+    width:90%;
+    margin-left:50px;
 }
 
 .Tinferior {
     border: solid 2px;
-    margin-left: 90px;
-    margin-right: 80px;
-    width: 81%;
+    margin-left: 50px;   
+    width: 90%;
 }
 
 .Tinferior thead > tr > th {

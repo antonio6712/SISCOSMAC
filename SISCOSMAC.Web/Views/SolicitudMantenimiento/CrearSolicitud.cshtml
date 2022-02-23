@@ -28,15 +28,15 @@
                 <div class="col-8">
                     <select asp-for="DepartamentoDirigido" class="form-control">
                         <option selected value="">Selecciona un departamento</option>
-                        <option value="Recursos Materiales">Recursos Materiales</option>
-                        <option value="Mantenimiento de Equipo">Mantenimiento de Equipo</option>
-                        <option value="Centro de Computo">Centro de Computo</option>
+                        <option value="RECURSOS MATERIALES">RECURSOS MATERIALES</option>
+                        <option value="MANTENIMIENTO DE EQUIPO">MANTENIMIENTO DE EQUIPO</option>
+                        <option value="CENTRO DE COMPUTO">CENTRO DE COMPUTO</option>
                     </select>
                     <span id="errorMgspan" asp-validation-for="DepartamentoDirigido" class="text-danger"></span>
                 </div>
             </div>
                         
-            <div class="form-group row">
+            @*<div class="form-group row">
                 <div class="col-4">
                     <label asp-for="NombreSolicitante"></label>
                 </div>
@@ -44,7 +44,7 @@
                     <input asp-for="NombreSolicitante" class="form-control" onkeyup="mayus(this)" />
                     <span asp-validation-for="NombreSolicitante" class="text-danger"></span>
                 </div>
-            </div>
+            </div>*@
 
             <div class="form-group row">
                 <div class="col-4">

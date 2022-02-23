@@ -1,0 +1,39 @@
+body{
+    padding-top:80px;
+}
+
+.Tsuperior {
+    border: solid 2px;
+    margin-left: 50px;
+    
+}
+
+    .Tsuperior thead > tr > th {
+        border: solid 2px;
+        padding: 5px;
+    }
+
+    .Tsuperior .imagenLogo {
+        width: 140px;
+        height: 100px;
+    }
+
+    .TPeque{
+        border:solid 2px;
+    }
+
+    .TPeque tbody tr td{
+        border:solid 2px;
+        padding-left:5px;
+    }
+
+.Tinferior {
+    border: solid 2px;
+    margin-left: 50px;
+    width: 90%;
+}
+
+    .Tinferior thead > tr > th {
+        border: solid 2px;
+        padding: 5px;
+    }

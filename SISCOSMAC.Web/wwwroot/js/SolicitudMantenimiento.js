@@ -15,7 +15,7 @@ function cargarDatatable() {
         },
         "columns": [
             { "data": "folio", "width": "5%" },
-            { "data": "areaSolicitante", "width": "20%" },
+            { "data": "departamentoDirigido", "width": "20%" },
             { "data": "fechaElaboracion", "width": "20%" },
             {
                 "data": "solicitudId",
@@ -30,7 +30,7 @@ function cargarDatatable() {
                                 <i class='fas fa-trash-alt'></i> Borrar
                             </a>
 
-                            <a href="/SolicitudMantenimiento/GenerarPDF/${data}" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
+                            <a href="/SolicitudMantenimiento/PrintView?controlador=SolicitudMantenimiento&accion=SolicitudPDF&IdSolicitud=${data}" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
                                 <i class="fas fa-plus-square"></i> Orden de trabajo   
                             </a>
 

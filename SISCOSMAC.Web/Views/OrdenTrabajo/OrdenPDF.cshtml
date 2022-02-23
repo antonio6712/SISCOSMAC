@@ -1,6 +1,10 @@
-﻿@{
+﻿@model SISCOSMAC.Web.ViewModels.OrdenTrabajoVM;
+
+@{
     Layout = null;
 }
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/OrderPDF.css">
+    <link rel="stylesheet" href="~/css/OrderPDF.css" />
 
 
 </head>
@@ -22,13 +26,13 @@
     <br />
     <br />
 
-    <table class="Tsuperior">
+     <table class="Tsuperior">
         <thead>
             <tr>
                 <th ROWSPAN="2">
                     <img src="~/images/logo.png" class="imagenLogo" />
                 </th>
-                <th style="text-align:center; font-size:18px;">Nombre del Documento: Formato para Orden de <p style="margin:auto;">Trabajo de Mantenimiento</p></th>
+                <th style="text-align:center; font-size:18px; width:470px;">Nombre del Documento: Formato para Orden de <p style="margin:auto;">Trabajo de Mantenimiento</p></th>
                 <th>
                     Código:
                     <p style="margin:auto;">TecNMACA-AD-PO-001-04</p>
@@ -56,9 +60,9 @@
     <h4 style="text-align:center; font-weight: bold;">ORDEN DE TRABAJO DE MANTENIMIENTO</h4>
 
     <br />
-    <div style="text-align:end; margin-right: 85px">
+    <div style="text-align:end; margin-right: 48px">
         <p style="display:inline-block;">Número de Control:  </p>
-        <p style="text-decoration: underline; display: inline-block;">17320843</p>
+        <p style="text-decoration: underline; display: inline-block;">@Model.NumeroControl</p>
     </div>
 
     <br />
@@ -70,9 +74,9 @@
                     <p style="display:inline-block; margin-left:250px; margin-bottom:0;">Interno </p>
                     <p style="display:inline-block; margin-left:150px; margin-bottom:0;">Externo </p>
                 </th>
-            </tr>
-            <tr><th>Tipo de Servicio:</th></tr>
-            <tr><th>Asignado a:</th></tr>
+            </tr>   
+            <tr><th >Tipo de Servicio: @Model.TipoServicio </th></tr>
+            <tr><th>Asignado a: @Model.Asignado</th></tr>
         </thead>
     </table>
 
@@ -80,23 +84,23 @@
     <table class="Tinferior">
         <thead>
             <tr>
-                <th>Fecha de realización:</th>
+                <th>Fecha de realización: @Model.FechaRealizacion</th>
             </tr>
 
             <tr style="height:500px; align-items:start;">
 
-                <th valign="top"><div>Trabajo Realizado:</div></th>
+                <th valign="top"><div>Trabajo Realizado: @Model.TrabajoRealizado</div></th>
             </tr>
 
             <tr>
                 <th style="padding:0;">
                     <table style="width:100%;">
                         <tr>
-                            <th style="border-right:solid 2px; border-bottom:2px solid;">Verificado y Liberado por:</th>
+                            <th style="border-right:solid 2px; border-bottom:2px solid;">Verificado y Liberado por: @Model.VerificadoLiberado</th>
                             <th style="border-bottom:solid 2px">Fecha y Firma:</th>
                         </tr>
                         <tr>
-                            <th style="border-right:2px solid;">Aprobado por: </th>
+                            <th style="border-right:2px solid;">Aprobado por: @Model.AprobadoPor</th>
                             <th>Fecha y Firma:</th>
                         </tr>
                     </table>
@@ -107,12 +111,15 @@
 
     <br />
 
-    <h6 style="margin-left:90px;">c.c.p. Departamento de Planeación Programación y Presupuestación  </h6>
-    <h6 style="margin-left:90px;">c.c.p. Área Solicitante.</h6>
+    <h6 style="margin-left:50px;">c.c.p. Departamento de Planeación Programación y Presupuestación  </h6>
+    <h6 style="margin-left:50px;">c.c.p. Área Solicitante.</h6>
     <small style="margin-left:190px;">Toda copia ELECTRÓNICA o IMPRESA es un "Documento No controlado" a excepción del original</small>
     <br />
-    <small style="margin-left:90px;">TecNMACA-AD-PO-001-04 <p style="margin-left:550px; display:inline-block;">Rev. 2</p></small>
+    <small style="margin-left:50px;">TecNMACA-AD-PO-001-04 <p style="margin-left:620px; display:inline-block;">Rev. 2</p></small>
 
+
+
+   
     <script src="~/js/jquery-3.3.1.slim.min.js"></script>
     <script src="~/js/popper.min.js"></script>
 

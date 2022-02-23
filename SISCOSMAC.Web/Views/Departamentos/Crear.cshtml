@@ -16,7 +16,7 @@
                     <label asp-for="NombreDepto"></label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="NombreDepto" class="form-control" />
+                    <input asp-for="NombreDepto" class="form-control" onkeyup="mayus(this)"/>
                     <span asp-validation-for="NombreDepto" class="text-danger"></span>
                 </div>
             </div>

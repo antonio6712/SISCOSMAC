@@ -1187,3 +1187,4 @@ C:\Users\anton\Documents\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\net
 C:\Users\anton\Documents\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\SISCOSMAC.Web.genruntimeconfig.cache
 C:\Users\anton\Documents\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\bin\Debug\netcoreapp3.1\DinkToPdf.dll
 C:\Users\anton\Documents\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\Razor\Views\OrdenTrabajo\OrdenPDF.cshtml.g.cs
+C:\Users\anton\Documents\Antonio\PROYECTOS\SISCOSMAC\SISCOSMAC.Web\obj\Debug\netcoreapp3.1\Razor\Views\SolicitudMantenimiento\SolicitudPDF.cshtml.g.cs

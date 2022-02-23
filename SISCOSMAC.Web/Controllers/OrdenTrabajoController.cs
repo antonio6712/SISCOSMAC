@@ -16,14 +16,7 @@ using System.Threading.Tasks;
 namespace SISCOSMAC.Web.Controllers
 {
 
-    public enum NotificationType
-    {
-        Success,
-        Error, 
-        Info
-    }
-
-    //[Authorize(Roles = "MANTENIMIENTO")]
+    
     public class OrdenTrabajoController : Controller
     {
 
@@ -42,14 +35,15 @@ namespace SISCOSMAC.Web.Controllers
             _converter = converter;
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
         public async Task<IActionResult> CrearOrden(int id)
         {
@@ -64,20 +58,22 @@ namespace SISCOSMAC.Web.Controllers
                 TempData["Mensaje"] = "No Puedes Crear Dos Ordenes de Trabajo de la Misma Solicitud";
                 return RedirectToAction("Index");
             }
-                        
+
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CrearOrden(OrdenTrabajoVM ordenTrabajoVM, int id)
         {
             var BuscarSolicitud = await unitofwork.SolicitudRepository.ObtenerPorIdAsin(id);
-            
+
             var orden = _mapper.Map<OrdenTrabajoVM, OrdenTrabajo>(ordenTrabajoVM);
 
             if (ModelState.IsValid)
             {
-                
+                orden.VerificadoLiberado = ConsultarClaim(ClaimTypes.Name);
+                orden.AprobadoPor = BuscarSolicitud.NombreSolicitante;
                 orden.SolicitudId = BuscarSolicitud.SolicitudId;
 
                 await unitofwork.OrdenRepository.AgregarAsin(orden);
@@ -89,12 +85,14 @@ namespace SISCOSMAC.Web.Controllers
             return View(ordenTrabajoVM);
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
         public IActionResult ListaOrdenes()
         {
             return View();
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
         public async Task<IActionResult> EditarOrden(int id)
         {
@@ -111,6 +109,7 @@ namespace SISCOSMAC.Web.Controllers
             return View(orden);
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditarOrden(OrdenTrabajoVM ordenTrabajoVM, int id)
@@ -127,8 +126,8 @@ namespace SISCOSMAC.Web.Controllers
                     orden.Asignado = ordenTrabajoVM.Asignado;
                     orden.FechaRealizacion = ordenTrabajoVM.FechaRealizacion;
                     orden.TrabajoRealizado = ordenTrabajoVM.TrabajoRealizado;
-                    orden.VerificadoLiberado = ordenTrabajoVM.VerificadoLiberado;
-                    orden.AprobadoPor = ordenTrabajoVM.AprobadoPor;
+                    //orden.VerificadoLiberado = ordenTrabajoVM.VerificadoLiberado;
+                    //orden.AprobadoPor = ordenTrabajoVM.AprobadoPor;
 
                     await unitofwork.OrdenRepository.ActualizarAsin(orden, id);
                     await unitofwork.SaveAsync();
@@ -138,21 +137,23 @@ namespace SISCOSMAC.Web.Controllers
             }
             catch (Exception ex)
             {
-                
+
             }
-            
+
             return View(ordenTrabajoVM);
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
-        {                       
+        {
 
             var departamentoDirigido = ConsultarClaim(ClaimTypes.GroupSid);
 
             return Json(new { data = await unitofwork.SolicitudRepository.ObtenerTodosAsin(match: x => x.DepartamentoDirigido == departamentoDirigido) });
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
         public async Task<IActionResult> ListaOrdenesGetAll()
         {
@@ -162,6 +163,7 @@ namespace SISCOSMAC.Web.Controllers
             return Json(new { data = await unitofwork.OrdenRepository.ObtenerTodosAsin(match: x => x.solicitud.DepartamentoDirigido == departamentoDirigido) });
         }
 
+        [Authorize(Roles = "MANTENIMIENTO")]
         [HttpDelete]
         public async Task<IActionResult> EliminarOrden(int id)
         {
@@ -178,9 +180,18 @@ namespace SISCOSMAC.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult OrdenPDF()
+        public async Task<IActionResult> OrdenPDF(int IdOrden)
         {
-            return View();
+            var modelo = await unitofwork.OrdenRepository.ObtenerPorIdAsin(IdOrden);
+
+            if (modelo == null)
+            {
+                return NotFound();
+            }
+
+            var orden = _mapper.Map<OrdenTrabajo, OrdenTrabajoVM>(modelo);
+
+            return View(orden);
         }
 
         // /Home/PrintView?controlador=Home&accion=Privacy&IdSolicitud=12
@@ -191,7 +202,7 @@ namespace SISCOSMAC.Web.Controllers
             //decrpyted values
             var route = string.Format("/{0}/{1}", controlador, accion);
             string absoluteUrl = "";
-            absoluteUrl = string.Format("{0}://{1}{2}?IdSolicitud={3}", Request.Scheme, Request.Host, route, IdOrden);
+            absoluteUrl = string.Format("{0}://{1}{2}?IdOrden={3}", Request.Scheme, Request.Host, route, IdOrden);
 
             var uri = new Uri(absoluteUrl, UriKind.Absolute);
             var doc = new HtmlToPdfDocument()

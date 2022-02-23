@@ -24,8 +24,8 @@ namespace SISCOSMAC.Web.ViewModels
         [Display(Name = "Area Solicitante")]
         public string AreaSolicitante { get; set; }
 
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [Display(Name = "Nombre y Firma del Solicitante")]
+        //[Required(ErrorMessage = "Este campo es requerido")]
+        //[Display(Name = "Nombre y Firma del Solicitante")]
         public string NombreSolicitante { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]

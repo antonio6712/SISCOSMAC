@@ -35,7 +35,9 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d4d46d315871888bc589c12d211a11d4f0954e5a", @"/Views/Shared/_Acceso.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d7a5da3c0847f784882f3545a4dfb9ccb1e27580", @"/Views/_ViewImports.cshtml")]
+    #nullable restore
     public class Views_Shared__Acceso : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
+    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -114,9 +116,9 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("ADMINISTRADOR"))//si es
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"collapse navbar-collapse justify-content-start\" id=\"nav-content\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a10185", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a10231", async() => {
                 WriteLiteral("\r\n            <ul class=\"navbar-nav\">\r\n\r\n                <li class=\"nav-item\">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a10552", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a10598", async() => {
                     WriteLiteral("<i class=\"fas fa-home\"></i>");
                 }
                 );
@@ -136,7 +138,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("ADMINISTRADOR"))//si es
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                </li>\r\n\r\n                <li class=\"nav-item \">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a12276", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a12322", async() => {
                     WriteLiteral("\r\n                        <strong>Departamentos</strong>\r\n                    ");
                 }
                 );
@@ -157,7 +159,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("ADMINISTRADOR"))//si es
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                </li>\r\n                <li class=\"nav-item \">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a14136", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a14182", async() => {
                     WriteLiteral("\r\n                        <strong>Usuarios</strong>\r\n                    ");
                 }
                 );
@@ -202,7 +204,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("ADMINISTRADOR"))//si es
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n");
             WriteLiteral("    <div class=\"collapse navbar-collapse justify-content-end\" id=\"nav-content\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a17979", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a18025", async() => {
                 WriteLiteral(@"
             <ul class=""navbar-nav"">
 
@@ -256,9 +258,9 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("MANTENIMIENTO"))//si es
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"collapse navbar-collapse justify-content-start\" id=\"nav-content\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a21552", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a21598", async() => {
                 WriteLiteral("\r\n            <ul class=\"navbar-nav\">\r\n\r\n                <li class=\"nav-item\">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a21919", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a21965", async() => {
                     WriteLiteral("<i class=\"fas fa-home\"></i>");
                 }
                 );
@@ -278,7 +280,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("MANTENIMIENTO"))//si es
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                </li>                                \r\n                <li class=\"nav-item \">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a23671", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a23717", async() => {
                     WriteLiteral("\r\n                        <strong>Solicitud de Mantenimiento</strong>\r\n                    ");
                 }
                 );
@@ -299,7 +301,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("MANTENIMIENTO"))//si es
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                </li>\r\n                <li class=\"nav-item \">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a25546", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a25592", async() => {
                     WriteLiteral("\r\n                        <strong>Solicitudes llegadas</strong>\r\n                    ");
                 }
                 );
@@ -320,7 +322,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("MANTENIMIENTO"))//si es
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                </li>\r\n                <li class=\"nav-item \">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a27415", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a27461", async() => {
                     WriteLiteral("\r\n                        <strong>Ordenes Generadas</strong>\r\n                    ");
                 }
                 );
@@ -365,7 +367,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("MANTENIMIENTO"))//si es
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n");
             WriteLiteral("    <div class=\"collapse navbar-collapse justify-content-end\" id=\"nav-content\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a31255", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a31301", async() => {
                 WriteLiteral(@"
             <ul class=""navbar-nav"">
 
@@ -420,9 +422,9 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("USUARIO"))//si esta aut
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"collapse navbar-collapse justify-content-start\" id=\"nav-content\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a34826", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a34872", async() => {
                 WriteLiteral("\r\n            <ul class=\"navbar-nav\">\r\n\r\n                <li class=\"nav-item \">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a35194", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a35240", async() => {
                     WriteLiteral("\r\n                        <strong>Solicitud de Mantenimiento</strong>\r\n                    ");
                 }
                 );
@@ -467,7 +469,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("USUARIO"))//si esta aut
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n");
             WriteLiteral("    <div class=\"collapse navbar-collapse justify-content-end\" id=\"nav-content\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a39041", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a39087", async() => {
                 WriteLiteral(@"
             <ul class=""navbar-nav"">
 
@@ -521,7 +523,7 @@ else
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"collapse navbar-collapse justify-content-end\" id=\"nav-content\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a42524", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4d46d315871888bc589c12d211a11d4f0954e5a42570", async() => {
                 WriteLiteral(@"
             <ul class=""navbar-nav"">
                 <li class=""nav-item dropdown"">
@@ -575,16 +577,26 @@ else
 #nullable disable
         }
         #pragma warning restore 1998
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
+        #nullable disable
+        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; } = default!;
+        #nullable disable
     }
 }
 #pragma warning restore 1591

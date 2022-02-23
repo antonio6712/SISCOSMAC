@@ -33,12 +33,12 @@ namespace SISCOSMAC.Web.ViewModels
         [Display(Name = "Trabajo Realizado")]
         public string TrabajoRealizado { get; set; }
 
-        [Required(ErrorMessage = "Este Campo es Requerido")]
-        [Display(Name = "Verificado y Liberado por")]
+        //[Required(ErrorMessage = "Este Campo es Requerido")]
+        //[Display(Name = "Verificado y Liberado por")]
         public string VerificadoLiberado { get; set; }
 
-        [Required(ErrorMessage = "Este Campo es Requerido")]
-        [Display(Name = "Aprobado por")]
+        //[Required(ErrorMessage = "Este Campo es Requerido")]
+        //[Display(Name = "Aprobado por")]
         public string AprobadoPor { get; set; }
 
         

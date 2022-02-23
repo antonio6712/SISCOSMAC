@@ -10,7 +10,7 @@
         </div>
         <div asp-validation-summary="ModelOnly" class="text-danger textoR "></div>
         <div class="form-label-group loginA col-6" >
-            <input asp-for="UsuarioLogin" class="form-control" placeholder="Usuario" autofocus />
+            <input asp-for="UsuarioLogin" class="form-control" placeholder="Usuario" autofocus onkeyup="mayus(this)"/>
             <label asp-for="UsuarioLogin"></label>
             <span asp-validation-for="UsuarioLogin" class="text-danger"></span>
         </div>
