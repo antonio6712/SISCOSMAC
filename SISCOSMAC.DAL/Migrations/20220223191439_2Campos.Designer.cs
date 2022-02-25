@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SISCOSMAC.DAL.DbContextSql;
 
 namespace SISCOSMAC.DAL.Migrations
 {
     [DbContext(typeof(ContextSql))]
-    partial class ContextSqlModelSnapshot : ModelSnapshot
+    [Migration("20220223191439_2Campos")]
+    partial class _2Campos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,6 +51,9 @@ namespace SISCOSMAC.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("Enviado")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<DateTime>("FechaRealizacion")
                         .HasColumnType("datetime");
 
@@ -58,6 +63,9 @@ namespace SISCOSMAC.DAL.Migrations
 
                     b.Property<int>("NumeroControl")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Recibido")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<int>("SolicitudId")
                         .HasColumnType("int");
@@ -99,9 +107,6 @@ namespace SISCOSMAC.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("Enviado")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<DateTime>("FechaElaboracion")
                         .HasColumnType("datetime");
 
@@ -111,9 +116,6 @@ namespace SISCOSMAC.DAL.Migrations
                     b.Property<string>("NombreSolicitante")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<bool>("Recibido")
-                        .HasColumnType("tinyint(1)");
 
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");

@@ -35,7 +35,11 @@ namespace SISCOSMAC.Web.ViewModels
         [Required(ErrorMessage = "Este campo es requerido")]
         [Display(Name = "Descripción del Servicio ")]
         public String DescripcionServicios { get; set; }
-        
+
+        public bool Enviado { get; set; }
+
+        public bool Recibido { get; set; }
+
         [Required]
         public int UsuarioId { get; set; }
                 

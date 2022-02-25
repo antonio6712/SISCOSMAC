@@ -30,6 +30,10 @@ namespace SISCOSMAC.DAL.Models
         [Required]
         public  String DescripcionServicios { get; set; }
 
+        public bool Enviado { get; set; }
+
+        public bool Recibido { get; set; }
+
         [Required]
         public int UsuarioId { get; set; }
 

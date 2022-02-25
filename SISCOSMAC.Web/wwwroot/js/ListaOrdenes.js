@@ -31,7 +31,7 @@ function cargarDatatable() {
                                 <i class='fas fa-trash-alt'></i> Borrar
                             </a>
 
-                            <a  href="/OrdenTrabajo/PrintView?controlador=OrdenTrabajo&accion=OrdenPDF&IdOrden=${data}" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
+                            <a  href="/OrdenTrabajo/PrintView?controlador=OrdenTrabajo&accion=OrdenPDF&IdOrden=${data}" target="_blank" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
                                 <i class="fas fa-plus-square"></i> Generar PDF
                             </a>
 

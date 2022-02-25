@@ -30,7 +30,7 @@ function cargarDatatable() {
                             <i class='fas fa-trash-alt'></i> Borrar
                         </a>
                                                         
-                        <a href="/SolicitudMantenimiento/PrintView?controlador=SolicitudMantenimiento&accion=SolicitudPDF&IdSolicitud=${data}" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
+                        <a href="/SolicitudMantenimiento/PrintView?controlador=SolicitudMantenimiento&accion=SolicitudPDF&IdSolicitud=${data}" target="_blank" class='btn btn-secondary text-white' style='cursor:pointer; width:200px; height:38px;'>
                             <i class="fas fa-plus-square"></i> Generar PDF   
                         </a>
 

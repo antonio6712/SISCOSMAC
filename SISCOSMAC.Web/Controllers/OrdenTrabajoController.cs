@@ -37,8 +37,27 @@ namespace SISCOSMAC.Web.Controllers
 
         [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+
+            var log = HttpContext.User.Identity.IsAuthenticated;
+            if (log == true)
+            {
+                var buscarSolicitudes = (from s in await unitofwork.SolicitudRepository.ObtenerTodosAsin()
+                                         where s.DepartamentoDirigido == ConsultarClaim(ClaimTypes.GroupSid) && s.Recibido == false
+                                         select new { s }).ToList();
+                int NumeroSolicitudes = buscarSolicitudes.Count;
+                if (NumeroSolicitudes == 0)
+                {
+                    return View();
+                }
+                else
+                {
+                    TempData["Solicitudes"] = NumeroSolicitudes;
+
+                }
+            }
+
             return View();
         }
 
@@ -76,6 +95,10 @@ namespace SISCOSMAC.Web.Controllers
                 orden.AprobadoPor = BuscarSolicitud.NombreSolicitante;
                 orden.SolicitudId = BuscarSolicitud.SolicitudId;
 
+                BuscarSolicitud.Recibido = true;                
+                await unitofwork.SolicitudRepository.ActualizarAsin(BuscarSolicitud,id);
+                
+
                 await unitofwork.OrdenRepository.AgregarAsin(orden);
                 await unitofwork.SaveAsync();
 
@@ -87,8 +110,26 @@ namespace SISCOSMAC.Web.Controllers
 
         [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
-        public IActionResult ListaOrdenes()
+        public async Task<IActionResult> ListaOrdenes()
         {
+            var log = HttpContext.User.Identity.IsAuthenticated;
+            if (log == true)
+            {
+                var buscarSolicitudes = (from s in await unitofwork.SolicitudRepository.ObtenerTodosAsin()
+                                         where s.DepartamentoDirigido == ConsultarClaim(ClaimTypes.GroupSid) && s.Recibido == false
+                                         select new { s }).ToList();
+                int NumeroSolicitudes = buscarSolicitudes.Count;
+                if (NumeroSolicitudes == 0)
+                {
+                    return View();
+                }
+                else
+                {
+                    TempData["Solicitudes"] = NumeroSolicitudes;
+
+                }
+            }
+
             return View();
         }
 
@@ -152,7 +193,7 @@ namespace SISCOSMAC.Web.Controllers
 
             return Json(new { data = await unitofwork.SolicitudRepository.ObtenerTodosAsin(match: x => x.DepartamentoDirigido == departamentoDirigido) });
         }
-
+                
         [Authorize(Roles = "MANTENIMIENTO")]
         [HttpGet]
         public async Task<IActionResult> ListaOrdenesGetAll()

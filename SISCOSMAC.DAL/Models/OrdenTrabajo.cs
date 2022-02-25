@@ -35,6 +35,7 @@ namespace SISCOSMAC.DAL.Models
         [Required]
         public string AprobadoPor { get; set; }
 
+        
         [Required]
         public int SolicitudId { get; set; }
 

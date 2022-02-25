@@ -32,8 +32,26 @@ namespace SISCOSMAC.Web.Controllers
         }
 
         [Authorize]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var log = HttpContext.User.Identity.IsAuthenticated;
+            if (log == true)
+            {
+                var buscarSolicitudes = (from s in await unitofwork.SolicitudRepository.ObtenerTodosAsin()
+                                         where s.DepartamentoDirigido == ConsultarClaim(ClaimTypes.GroupSid) && s.Recibido == false
+                                         select new { s }).ToList();
+                int NumeroSolicitudes = buscarSolicitudes.Count;
+                if (NumeroSolicitudes == 0)
+                {
+                    return View();
+                }
+                else
+                {
+                    TempData["Solicitudes"] = NumeroSolicitudes;
+
+                }
+            }
+
             return View();
         }
 
@@ -80,7 +98,8 @@ namespace SISCOSMAC.Web.Controllers
                 string idusu = ConsultarClaim(ClaimTypes.UserData);
                 var id = Convert.ToInt32(idusu);
                 solicitud.UsuarioId = id;
-                                
+
+                solicitud.Enviado = true;
                 solicitud.DepartamentoDirigido = solicitudMantenimientoCorrectivoVM.DepartamentoDirigido.ToUpper();
 
                 await unitofwork.SolicitudRepository.AgregarAsin(solicitud);

@@ -39,7 +39,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("ADMINISTRADOR"))//si es
                     <a class="nav-link " id="navbardrop" asp-action="Index" asp-controller="Usuarios" style="color:#ffffff">
                         <strong>Usuarios</strong>
                     </a>
-                </li>                
+                </li>
 
             </ul>
         </form>
@@ -72,7 +72,7 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("MANTENIMIENTO"))//si es
 
                 <li class="nav-item">
                     <a class="nav-link" asp-action="Index" asp-controller="Home" style="color:#ffffff"><i class="fas fa-home"></i></a>
-                </li>                                
+                </li>
                 <li class="nav-item ">
                     <a class="nav-link " id="navbardrop" asp-action="Index" asp-controller="SolicitudMantenimiento" style="color:#ffffff">
                         <strong>Solicitud de Mantenimiento</strong>
@@ -80,7 +80,16 @@ else if (User.Identity.IsAuthenticated && User.IsInRole("MANTENIMIENTO"))//si es
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link " id="navbardrop" asp-action="Index" asp-controller="OrdenTrabajo" style="color:#ffffff">
-                        <strong>Solicitudes llegadas</strong>
+                        <strong>
+                            Solicitudes llegadas
+                            @if(@TempData["Solicitudes"] != null){
+                                <div style="border-radius:50%; width:20px; height:20px; text-align:center; display:inline-block; background:red;">
+                                    <strong  >@TempData["Solicitudes"]</strong>
+                                </div>
+                            }
+                            
+
+                        </strong>
                     </a>
                 </li>
                 <li class="nav-item ">
