@@ -42,7 +42,7 @@ function cargarDatatable() {
 
 function Delete(url) {
     swal({
-        title: "Esta seguro de borrar?",
+        title: "¿Está seguro de borrar?",
         text: "Este contenido no se puede recuperar!",
         type: "warning",
         showCancelButton: true,
